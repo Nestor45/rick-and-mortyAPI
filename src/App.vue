@@ -1,16 +1,29 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <h1>Rick and Marty</h1>
+    <FilterByStatus/>
+    <FilterByName/>
+    <ListCharacters/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import M from 'materialize-css'
 
+import FilterByStatus from './components/FilterByStatus.vue'
+import FilterByName from './components/FilterByName.vue'
+import ListCharacters from './components/ListCharacters.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    ListCharacters,
+    FilterByStatus,
+    FilterByName
+  },
+  mounted () {
+    M.AutoInit()
+  },
+
 }
 </script>
 
